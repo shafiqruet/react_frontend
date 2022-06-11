@@ -36,7 +36,7 @@ const Navbar = () => {
             <NavLink to="/product_list" activestyle="true">
               Product List
             </NavLink>
-            <a onClick={logout} activestyle="true">
+            <a href="/" onClick={logout}>
               Logout
             </a>
           </NavMenu>
