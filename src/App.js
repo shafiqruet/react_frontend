@@ -12,6 +12,7 @@ import SignUp from "./pages/signup";
 import Profile from "./pages/profile";
 import Product from "./pages/product";
 import ProductList from "./pages/product_list";
+import EditProduct from "./pages/edit_product";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/product" element={<Product />} />
         <Route path="/product_list" element={<ProductList />} />
+        <Route path="/edit_product" element={<EditProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
         <Route path="/annual" element={<AnnualReport />} />

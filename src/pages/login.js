@@ -11,7 +11,7 @@ const Login = () => {
     console.log(text);
     await localStorage.setItem("userLogin", 1);
     await localStorage.setItem("userId", text.id);
-    window.location = "/about";
+    window.location = "/profile";
   };
 
   const userLogin = async (e) => {

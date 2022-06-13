@@ -42,6 +42,10 @@ const ProductList = () => {
     });
   };
 
+  const editProduct = (orderId) => {
+    window.location = `/edit_product?product_id=${orderId}`;
+  };
+
   const failed = async (text) => {
     setErrorMessage(text);
   };
@@ -82,7 +86,7 @@ const ProductList = () => {
 
   React.useEffect(() => {
     getData();
-  }, [page]);
+  }, []);
 
   return (
     <div>
@@ -110,15 +114,22 @@ const ProductList = () => {
                 <td>{row.amount}</td>
                 <td>
                   {" "}
-                  <a
+                  <span
                     className="btn btn-light"
-                    style={{ marginLeft: "auto" }}
+                    onClick={(e) => {
+                      editProduct(row.id);
+                    }}
+                  >
+                    Edit
+                  </span>
+                  <span
+                    className="btn btn-light"
                     onClick={(e) => {
                       deleteOrder(row.id);
                     }}
                   >
                     Delete
-                  </a>
+                  </span>
                 </td>
               </tr>
             ))}

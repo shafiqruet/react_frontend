@@ -27,9 +27,18 @@ class AuthService {
       .catch((errors) => console.log(errors));
   }
 
-  put_order_api(saleId, data, success) {
+  productInfo(product_id, success, failed, fail) {
     axios
-      .put(`${API_URL}/api/orders/${saleId}/`)
+      .get(`${API_URL}/api/orders/${product_id}/`)
+      .then((res) => success(res.data.data))
+      .catch((errors) => console.log(errors));
+  }
+
+  put_order_api(saleId, data, success) {
+    console.log(data);
+    console.log(saleId);
+    axios
+      .put(`${API_URL}/api/orders/${saleId}/`, data)
       .then((res) => success(res.data.data))
       .catch((errors) => console.log(errors));
   }

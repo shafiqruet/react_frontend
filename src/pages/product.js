@@ -62,17 +62,6 @@ const Product = () => {
         <div style={{ margin: "1em", color: "red" }}>{errormessage}</div>
         <form method="post">
           <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">{modalDescription}</h5>
-              <button
-                type="button"
-                className="btn-close"
-                onClick={() => {
-                  setShowModal(false);
-                }}
-                aria-label="Close"
-              ></button>
-            </div>
             <div className="modal-body">
               <label>Item name</label>
               <div className="form-group">
