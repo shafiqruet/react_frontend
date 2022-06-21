@@ -57,71 +57,73 @@ const Product = () => {
 
   return (
     <div>
-      <div style={{ width: "500px", margin: "auto", marginTop: "50px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
+      <div style={{ width: "1000px", margin: "auto", marginTop: "10px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
         <div style={{ margin: "1em", color: "green" }}>{message}</div>
         <div style={{ margin: "1em", color: "red" }}>{errormessage}</div>
-        <form method="post">
-          <div className="modal-content">
-            <div className="modal-body">
-              <label>Item name</label>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="item"
-                  id="itemInput"
-                  value={item}
-                  onChange={(e) => {
-                    setItem(e.target.value);
-                  }}
-                  placeholder="Item name"
-                />
+        <div style={{ width: "500px", margin: "auto", marginTop: "40px", marginBottom: "40px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
+          <form method="post">
+            <div className="modal-content">
+              <div className="modal-body">
+                <label>Item name</label>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="item"
+                    id="itemInput"
+                    value={item}
+                    onChange={(e) => {
+                      setItem(e.target.value);
+                    }}
+                    placeholder="Item name"
+                  />
+                </div>
+                <label style={{ marginTop: "1em" }}>Price</label>
+                <div className="form-group">
+                  <input
+                    type="number"
+                    className="form-control"
+                    placeholder="Price"
+                    value={price}
+                    onChange={(e) => {
+                      setPrice(e.target.value);
+                    }}
+                    name="price"
+                  />
+                </div>
+                <label style={{ marginTop: "1em" }}>Quantity</label>
+                <div className="form-group">
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={quantity}
+                    onChange={(e) => {
+                      setQuantity(e.target.value);
+                    }}
+                    placeholder="Quantity"
+                    name="quantity"
+                  />
+                </div>
+                <small className="form-text text-muted">{error}</small>
               </div>
-              <label style={{ marginTop: "1em" }}>Price</label>
-              <div className="form-group">
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Price"
-                  value={price}
-                  onChange={(e) => {
-                    setPrice(e.target.value);
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    setShowModal(false);
                   }}
-                  name="price"
-                />
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" className="btn btn-primary" onClick={saveOrder}>
+                  Save changes
+                </button>
               </div>
-              <label style={{ marginTop: "1em" }}>Quantity</label>
-              <div className="form-group">
-                <input
-                  type="number"
-                  className="form-control"
-                  value={quantity}
-                  onChange={(e) => {
-                    setQuantity(e.target.value);
-                  }}
-                  placeholder="Quantity"
-                  name="quantity"
-                />
-              </div>
-              <small className="form-text text-muted">{error}</small>
             </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => {
-                  setShowModal(false);
-                }}
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="submit" className="btn btn-primary" onClick={saveOrder}>
-                Save changes
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

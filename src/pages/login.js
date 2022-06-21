@@ -34,10 +34,11 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <div style={{ width: "500px", margin: "auto", marginTop: "50px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
-        <div style={{ margin: "1em", color: "green" }}>{message}</div>
-        <div style={{ margin: "1em", color: "red" }}>{errormessage}</div>
+
+    <div style={{ width: "1000px", margin: "auto", marginTop: "50px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
+      <div style={{ margin: "1em", color: "green" }}>{message}</div>
+      <div style={{ margin: "1em", color: "red" }}>{errormessage}</div>
+      <div style={{ width: "500px", margin: "auto", marginTop: "30px", marginBottom: "30px", boxShadow: "5px 5px 20px #cccccccc", padding: "1em" }}>
         <form>
           <div className="mb-3">
             <label>
