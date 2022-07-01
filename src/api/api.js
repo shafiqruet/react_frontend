@@ -16,14 +16,14 @@ class AuthService {
   login(formData, success, failed, fail) {
     axios
       .post(`${API_URL}/api/login/`, formData)
-      .then((res) => success(res.data.data))
+      .then((res) => success(res.data.data[0]))
       .catch((errors) => console.log(errors));
   }
 
   userInfo(userId, success, failed, fail) {
     axios
       .get(`${API_URL}/api/user_data/${userId}/`)
-      .then((res) => success(res.data.data))
+      .then((res) => success(res.data.data[0]))
       .catch((errors) => console.log(errors));
   }
 

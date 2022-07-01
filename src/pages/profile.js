@@ -19,6 +19,7 @@ const Profile = () => {
   };
 
   const success = async (text) => {
+    console.log(text)
     setMessage(text);
   };
 

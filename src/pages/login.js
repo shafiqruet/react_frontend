@@ -8,7 +8,7 @@ const Login = () => {
   const [message, setMessage, errormessage, setErrorMessage] = React.useState("");
 
   const success = async (text) => {
-    console.log(text);
+    //console.log(text);
     await localStorage.setItem("userLogin", 1);
     await localStorage.setItem("userId", text.id);
     window.location = "/profile";
